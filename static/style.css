@@ -30,3 +30,13 @@ form{
   padding-left: 300px;
   padding-right: 300px;
 }
+.data{
+  color:rgb(243, 234, 234);
+  height: 300px;
+  width: 600px;
+  display: block;
+  margin: 100px auto;
+  background-color: rgb(5, 57, 69);
+  padding: 100px;
+}
+

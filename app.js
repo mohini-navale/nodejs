@@ -77,8 +77,8 @@ app.post("/login", async (req, res) => {
       if (email == users1.email && password == users1.password) {
         res.redirect("/home");
       } else {
-        // res.render("invalid.pug");
-        res.send("invalid login credentials")
+        res.render("invalid.pug");
+        // res.send("invalid login credentials")
       }
     }
      else {
@@ -93,24 +93,15 @@ app.get("/home",(req,res)=>{
   res.render("home1.pug")
 })
 
-
-app.post("/home",async (req, res) => {
-  const data= await Register.find()
-  // console.log(data)
-  const allpara= await data.map((n)=>{
-    const para= n.name
-    console.log("**************",para)
-    return para
-  })
-  const a="valid data"
-  const para={allpara:allpara}
-  console.log(para)
-  res.render("home1.pug",para);
-});
-
-
+app.get("/contact",(req,res)=>{
+  res.render("contact.pug")
+})
 app.get("/about", (req, res) => {
   res.render("about.pug");
+});
+
+app.get("/services", (req, res) => {
+  res.render("services.pug");
 });
 
 app.get("/invalid", (req, res) => {
